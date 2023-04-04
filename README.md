@@ -1,8 +1,8 @@
 # chrome-pie
 ## (work in progress)
 You deserve access to your device
-
-A jailbreak for chromeos to bypass admin privileges. This works on your school managed chromebook too!
+## What it is / Info
+> A jailbreak for chromeos to bypass admin privileges. This works on your school managed chromebook too!
 
 The wrapper is made in C
 
