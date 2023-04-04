@@ -7,7 +7,7 @@ You deserve access to your device
 
 ## How to use it!
 
-> You will need to buy an raspberry pi pico and you can get one for like 8 USD from microcenter. Check [`INSTALL.md`](https://github.com/kevinalavik/chrome-pie/main/INSTALL.md) for instructions on how to install it and build it.
+> You will need to buy an raspberry pi pico and you can get one for like 8 USD from microcenter. Check [`INSTALL.md`](https://github.com/KevinAlavik/chrome-pie/blob/main/INSTALL.md) for instructions on how to install it and build it.
 
 ## Why do you need an raspberry pi pico?
 
