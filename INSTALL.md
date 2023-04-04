@@ -9,7 +9,7 @@ To build and install **pie** on Mac and Linux follow the steps down below
 
 **Build and install manually:**
 
-`work in progress`
+`working on it`
 
 **Then just run (needs to be connected to the target via usb)**
 
@@ -19,4 +19,4 @@ If everything whent smothly then your target should be restarted!
 
 ## Windows
 
-***Currently not supported**
+***Working on it**
