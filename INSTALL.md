@@ -13,7 +13,9 @@ To build and install **pie** on Mac and Linux follow the steps down below
 
 **Then just run (needs to be connected to the target via usb)**
 
-`pie install`
+`pie run`
+
+`pie run --help` (For advanced run check the help)
 
 If everything whent smothly then your target should be restarted!
 
