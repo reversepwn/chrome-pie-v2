@@ -1,0 +1,9 @@
+{
+    "All": [
+        "tweaks/transparent-dock.c",
+        "tweaks/custom-icons.c"
+    ],
+    "Enabled": [
+
+    ]
+}
