@@ -7,7 +7,13 @@ You deserve access to your device
 
 ## How to use it!
 
-> You will need to buy an raspberry pi pico and you can get one for like 8 USD from microcenter. Check [`INSTALL.md`](https://github.com/KevinAlavik/chrome-pie/blob/main/INSTALL.md) for instructions on how to install it and build it.
+> You will need to buy an raspberry pi pico and you can get one for like 8 USD from microcenter. Check [`INSTALL.md`](https://github.com/KevinAlavik/chrome-pie/blob/main/INSTALL.md) for instructions on how to install it and build it.*
+
+***You can use a computer or even your phonne (either Android or jailbroken iOS works prob) but a raspberry pi pico is more sneaky and you can have it in your pocket.**
+
+## Why is it good to have the pico in your pocket?
+
+> The target (aka your chromebook) has a chance of deafulting back the privlages on like restart or if the computer dies
 
 ## Why do you need an raspberry pi pico?
 
