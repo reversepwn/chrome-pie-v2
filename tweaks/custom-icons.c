@@ -1,3 +1,5 @@
+//name: Custom Icons
+
 #include <stdio.h>
 #include <stdlib.h>
 

@@ -1,7 +1,7 @@
 {
     "All": [
-        "tweaks/transparent-dock.c",
-        "tweaks/custom-icons.c"
+        "https://raw.githubusercontent.com/KevinAlavik/chrome-pie/main/tweaks/transparent-dock.c",
+        "https://raw.githubusercontent.com/KevinAlavik/chrome-pie/main/tweaks/custom-icons.c"
     ],
     "Enabled": [
 

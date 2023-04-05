@@ -1,3 +1,5 @@
+// name: Transparent Dock
+
 #include <stdio.h>
 #include <stdlib.h>
 
