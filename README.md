@@ -9,7 +9,7 @@ You deserve access to your device
 
 > You will need to buy an raspberry pi pico and you can get one for like 8 USD from microcenter. Check [`INSTALL.md`](https://github.com/KevinAlavik/chrome-pie/blob/main/INSTALL.md) for instructions on how to install it and build it.*
 
-***You can use a computer or even your phonne (either Android or jailbroken iOS works prob) but a raspberry pi pico is more sneaky and you can have it in your pocket.**
+***You can use a computer or even your phone (either Android or jailbroken iOS should work, but then you need usb to usb canble and thats not really something you have laying around) but a raspberry pi pico is more sneaky and you can have it in your pocket.**
 
 ## Why is it good to have the pico in your pocket?
 
