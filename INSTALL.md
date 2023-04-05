@@ -13,10 +13,13 @@ To build and install **pie** on Mac and Linux follow the steps down below
 
 **Then just run (needs to be connected to the target via usb)**
 
-`pie run -d "usb port of connected target"`
+`pie install`
 
 If everything whent smothly then your target should be restarted!
 
 ## Windows
 
 ***Working on it**
+
+
+### After you have installed it go to [here](https://github.com/kevinalavik/chrome-pie/blob/main/USE.md)
