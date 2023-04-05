@@ -5,9 +5,9 @@
 #define COLOR_RED   "\033[31m"
 #define COLOR_OFF   "\e[m"
 
-int main(char argc, char* argv[]) {
+int main(char* argc, char* argv[]) {
     if (argv[1] == "--help") {
-      printf(COLOR_RED "Chrome Pie\n" COLOR_OFF "--help - Displays this message\n\n");
+      printf(COLOR_RED"Chrome Pie\n" COLOR_OFF "--help - Displays this message\n\n");
     } 
     if (argv[1] == "run") {
       if(argv[2] = "--help") {
