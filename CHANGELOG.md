@@ -1,1 +1,2 @@
-- Added installing
+- Added installing (April 5 2023)
+- Fixed the command line tool (April 6 2023)

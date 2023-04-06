@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include "lib/colors.h"
+#include "lib/tweak-handler.h"
+#include "lib/bypass.h"
+#include "lib/sideload.h"
 
 int main(int argc, char **argv) {
   if (argc < 2) {
@@ -19,7 +22,7 @@ int main(int argc, char **argv) {
     return 1;
   } else if (strcmp(instr, "run") == 0) {
     if (argc == 2) {
-      printf("Work in progress \n");
+      runPie();
     } else if (argc == 3) {
       if (strcmp(argv[2], "--stable") == 0) {
         printf("Set default install/run option to " BWHT "stable\n");

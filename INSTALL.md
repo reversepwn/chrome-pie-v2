@@ -17,6 +17,10 @@ To build and install **pie** on Mac and Linux follow the steps down below
 
 `pie run --help` (For advanced run check the help)
 
+**For raspberry pi pico run the following commands:**
+
+`pie run pico`
+
 If everything whent smothly then your target should be restarted!
 
 ## Windows

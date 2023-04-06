@@ -22,7 +22,7 @@ You deserve access to your device
 **And im like 80% sure you cant do this via bluethooth sadly**
 ## If i do have linux access?
 
-> Then you dont need to buy an raspberry you can just run `linux.sh` and your device should be restarted when its done!
+> Then you dont need to buy an raspberry you can just run `odi.sh` and your device should be restarted when its done! 
 
 ### made with love by puffer
 
