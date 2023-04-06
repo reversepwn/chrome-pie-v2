@@ -1,27 +1,43 @@
 #include <stdio.h>
 #include <stdlib.h>
-  
-#define COLOR_BOLD  "\e[1m"
-#define COLOR_RED   "\033[31m"
-#define COLOR_OFF   "\e[m"
+#include <string.h>
+#include "lib/colors.h"
 
-int main(char* argc, char* argv[]) {
-    if (argv[1] == "--help") {
-      printf(COLOR_RED"Chrome Pie\n" COLOR_OFF "--help - Displays this message\n\n");
-    } 
-    if (argv[1] == "run") {
-      if(argv[2] = "--help") {
-        printf("Run commands\n--help - Displays this message\n--stable - Installs the stable version of pie\n--canary - Innstalls the canary version of pie\n");
-        return 1;
-      } if (argv[2] == "--stable ") {
-        printf("Set deafult install/run option to **stable**");
+int main(int argc, char **argv) {
+  if (argc < 2) {
+    printf(RED "Expected a command, " reset "see " BWHT "--help or -h " reset "for a list of commands\n");
+    return 1;
+  }
+  
+  char* instr = argv[1]; 
+  
+  if (strcmp(instr, "--help" ) == 0) {
+    printf(RED "Chrome Pie\n" reset "--help, -h - Displays this message\nrun - runs pie\n");
+    return 1;
+  } else if (strcmp(instr, "-h" ) == 0) { 
+    printf(RED "Chrome Pie\n" reset "--help, -h - Displays this message\nrun - runs pie\n");
+    return 1;
+  } else if (strcmp(instr, "run") == 0) {
+    if (argc == 2) {
+      printf("Chrome Pie\n--------------\nWork in progress\n---------------\n");
+    } else if (argc == 3) {
+      if (strcmp(argv[2], "--stable") == 0) {
+        printf("Set default install/run option to " BWHT "stable\n");
+      } else if (strcmp(argv[2], "--canary") == 0) {
+        printf("Set default install/run option to " BWHT "canary\n");
+      } else if (strcmp(argv[2], "--help") == 0) {
+        printf("Run commands\n--help - Displays this message\n--stable - Installs the stable version of pie\n--canary - Installs the canary version of pie\n");
       } else {
-        printf("Chrome Pie\n--------------\nWork in progress\n---------------\n");
+        printf(RED "Did not find argument: " reset BWHT GRN "%s, " reset "see" BWHT " --help or -h" reset "for a list of arguments\n", argv[2]);
       }
-      return 0;
+    } else if (argc == 4 && strcmp(argv[2], "--help") == 0) {
+      printf("Run commands\n--help - Displays this message\n--stable - Installs the stable version of pie\n--canary - Installs the canary version of pie\n");
     } else {
-      printf("Did not find command check" COLOR_BOLD " --help " COLOR_OFF "for a list of the commands\n");
-      return 0;
+      printf(RED "Invalid number of arguments, " reset "see " BWHT "--help or -h " reset "for a list of arguments\n");
     }
-    return 0;
+  } else {
+    printf(RED "Invalid command: " reset BWHT GRN "%s, " reset "see " BWHT "--help or -h" reset "for a list of commands\n", instr);
+  }
+  
+  return 0;
 }
