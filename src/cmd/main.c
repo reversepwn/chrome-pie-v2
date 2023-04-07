@@ -20,6 +20,8 @@ int main(int argc, char **argv) {
   } else if (strcmp(instr, "-h" ) == 0) { 
     printf(RED "Chrome Pie\n" reset "--help, -h - Displays this message\nrun - runs pie\n");
     return 1;
+  } else if (strcmp(instr, "pico" ) == 0) {
+    runPiePico();
   } else if (strcmp(instr, "run") == 0) {
     if (argc == 2) {
       runPie();
@@ -41,7 +43,7 @@ int main(int argc, char **argv) {
       printf(RED "Invalid number of arguments, " reset "see " BWHT "--help or -h " reset "for a list of arguments\n");
     }
   } else {
-    printf(RED "Invalid command: " reset BWHT GRN "%s, " reset "see " BWHT "--help or -h" reset "for a list of commands\n", instr);
+    printf(RED "Invalid command: " reset BWHT GRN "%s, " reset "see " BWHT "--help or -h" reset "for a list of commands\n", *instr);
   }
   
   return 0;
