@@ -2,11 +2,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#include "bypass.h"
-#include "colors.h"
-#include "chromeos.h"
-
-
 void runPie() {
     int r = rand() % 12;
     printf("Starting the sideload proccess, estimated time " RED "%d" CRESET "s\n", r);

@@ -2,9 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include "lib/colors.h"
+#include "lib/tweak-loader.h"
 #include "lib/tweak-handler.h"
 #include "lib/bypass.h"
 #include "lib/sideload.h"
+#include "lib/chromeos.h" 
 
 int main(int argc, char **argv) {
   if (argc < 2) {
@@ -17,9 +19,25 @@ int main(int argc, char **argv) {
   if (strcmp(instr, "--help" ) == 0) {
     printf(RED "Chrome Pie\n" reset "--help, -h - Displays this message\nrun - runs pie\n");
     return 1;
-  } else if (strcmp(instr, "-h" ) == 0) { 
+  } else if (strcmp(instr, "-h" ) == 0) {
     printf(RED "Chrome Pie\n" reset "--help, -h - Displays this message\nrun - runs pie\n");
     return 1;
+  } else if (strcmp(instr, "tweak" )== 0) {
+    printf(RED "Chrome Pie\n" reset "create - Creates an template file for developing tweaks\n");
+    if(strcmp(argv[2], "create") == 0) {
+      if(strcmp(argv[3], "-n") == 0) {
+        if(strcmp(argv[4], "") == 1) {
+          tweakTemplate(argv[4]);
+        }  else {
+          printf(RED "Expected an name, " reset "do \"tweak name\" after (replace tweak name with your tweaks name)\n");
+        }
+      } else if (strcmp(argv[3], "-h") == 0) {
+        printf(RED "Chrome Pie Tweak Builder\n" reset "-n - Set the name of the tweak\n");
+      } else if (strcmp(argv[3], "--help") == 0) {
+        printf(RED "Chrome Pie Tweak Builder\n" reset "-n - Set the name of the tweak\n");
+      }
+      printf(RED "Expected an argument, " reset "see " BWHT "--help or -h " reset "for a list of commands\n");
+    }
   } else if (strcmp(instr, "pico" ) == 0) {
     runPiePico();
   } else if (strcmp(instr, "run") == 0) {

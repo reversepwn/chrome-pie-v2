@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "chromeos.h": "c"
+        "*.embeddedhtml": "html",
+        "chromeos.h": "c",
+        "tweak-loader.h": "c"
     }
 }
