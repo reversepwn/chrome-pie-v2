@@ -1,9 +1,9 @@
-echo "Thanks for using chrome pie, very much love from @pufferisadev"
-echo "--------------------------------------------------------------"
-gcc src/cmd/main.c && sudo chmod +x a.out && mv a.out ./pie
+#!/bin/bash
+
+rm pie
+sudo mkdir -p /usr/local/bin
+clang ./src/cmd/main.c -o pie
 sleep 2s
-echo "Successfully compiled pie, (./pie)"
+sudo mv pie /usr/local/bin
+echo "Successfully compiled pie"
 echo "Now check the install guide (https://github.com/KevinAlavik/chrome-pie/blob/main/INSTALL.md) just skip the Build and Install part. And you should be good to go"
-sudo mv ./pie /usr/bin
-sleep 3s
-clear

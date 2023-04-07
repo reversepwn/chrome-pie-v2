@@ -43,7 +43,7 @@ int main(int argc, char **argv) {
       printf(RED "Invalid number of arguments, " reset "see " BWHT "--help or -h " reset "for a list of arguments\n");
     }
   } else {
-    printf(RED "Invalid command: " reset BWHT GRN "%s, " reset "see " BWHT "--help or -h" reset "for a list of commands\n", *instr);
+    printf(RED "Invalid command: " reset BWHT GRN "%c, " reset "see " BWHT "--help or -h" reset "for a list of commands\n", *instr);
   }
   
   return 0;

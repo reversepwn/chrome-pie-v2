@@ -4,5 +4,4 @@
 
 void check() {
     printf("Work in progress");
-    return 0;
 }
