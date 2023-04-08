@@ -87,5 +87,5 @@ void run()
 {
     system("sudo chmod +xrw ./ascii.sh && sudo ./ascii.sh\n\n");
     printf(BRED "Currently a work in progress, there is no functionallity as of right now. All of the features that work are private!\n\n");
-    printf(UMAG "Developed with love from puffer <3\r\n");
+    printf(UMAG "Developed with love from puffer <3\r\n\n");
 }

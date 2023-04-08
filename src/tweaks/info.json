@@ -1,6 +1,6 @@
 {
     "EnabledTweaks":[
-        "installed/demo"
+        "out/demo"
     ],
     "TweakSettings":[{
         "demo": {

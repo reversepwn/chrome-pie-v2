@@ -7,5 +7,5 @@ void check() {
 }
 
 void alert(char message[]) {
-    printf("Triggered an alert, message content: %s", message);
+    printf("Triggered an alert, message content: %s\r\n", message);
 }

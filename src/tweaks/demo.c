@@ -1,6 +1,6 @@
 /*
 
-DEMO TWEAK, DOEST DO ANYTHING EXEPT PROMPT AN ALERT IN CHROME OS
+DEMO TWEAK, DOEST DO ANYTHING EXEPT PROMPT AN ALERT IN CHROME
 ---- This tweak doesnt use the tweak handler ----
 
 */
@@ -12,6 +12,7 @@ DEMO TWEAK, DOEST DO ANYTHING EXEPT PROMPT AN ALERT IN CHROME OS
 
 #include "../lib/chromeos.h"
 #include "../lib/tweak-loader.h"
+#include "../lib/colors.h"
 
 int load();
 int tweak();
@@ -24,7 +25,7 @@ int main()
 int load()
 {
     // This will run when the program launches
-    printf("Loaded the demo tweak!\r\n");
+    printf("[" GRN "Success" reset "]" CYN " Loaded the tweak!\r\n");
     tweak();
     return 0;
 }
@@ -32,6 +33,6 @@ int load()
 int tweak()
 {
     // This is the main tweak function, will only load if the load() function was ran successfully
-    alert("Hello, World!");
+    printf(GRN "Hello, World!");
     return 0;
 }
