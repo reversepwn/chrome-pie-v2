@@ -2,6 +2,7 @@
     "files.associations": {
         "*.embeddedhtml": "html",
         "chromeos.h": "c",
-        "tweak-loader.h": "c"
+        "tweak-loader.h": "c",
+        "unistd.h": "c"
     }
 }

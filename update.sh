@@ -1,7 +1,6 @@
 sudo git pull
 sudo mkdir -p /usr/local/bin
 clang ./src/main.c -o pie
-sleep 2s
 echo "$1" > /usr/local/bin/.piever
 sudo mv pie /usr/local/bin
 echo "Successfully updated pie"
