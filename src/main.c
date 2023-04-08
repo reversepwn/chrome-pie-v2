@@ -49,5 +49,5 @@ void error(int type)
 
 void help()
 {
-    printf(UYEL "Chrome Pie" reset "\n -help, -h - Displays this message\nrun - runs pie\ntweak - create tweak command(s)\r\n");
+    printf(UYEL "Chrome Pie" reset "\n -help, -h - Displays this message\n run - runs pie\n tweak - create tweak command(s)\n update - updates pie\r\n");
 }
