@@ -1,0 +1,15 @@
+{
+    "name":"Base Repo",
+    "owner":"puffer",
+    "icon":"https://example.com/images/example.png",
+    "Permissions":[
+        "AllowAlerts",
+        "AllowFileEditing",
+        "AllowRoot"
+    ],
+    "Tweaks":[{
+        "demo":[
+            "demo.c"
+        ]
+    }]
+}

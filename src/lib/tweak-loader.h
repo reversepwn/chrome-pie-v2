@@ -8,6 +8,8 @@ void loadTweak(char name[])
 {
     char findFileCommand[100];
     char startTweakCommand[100];
+    char command[100]; // declare the command variable here
+
     sprintf(findFileCommand, "find . | grep -i '%s.c'", name);
     char file[1000];
     FILE *fp = popen(findFileCommand, "r");
@@ -19,8 +21,11 @@ void loadTweak(char name[])
     fgets(file, sizeof(file), fp);
     pclose(fp);
     printf("Found tweak: %s · Starting the tweak now!\n", file);
+    sprintf(startTweakCommand, "sudo clang %s ", file);
+    printf("Running: %s", startTweakCommand);
+    system(startTweakCommand);
     char newName[100];
     sprintf(newName, "./src/tweaks/out/%s", name);
-    sprintf(startTweakCommand, "sudo gcc %s  -o %s && %s", file, newName, newName);
-    system(startTweakCommand);
+    sprintf(command, "mv ./a.out %s && sudo chmod +x %s && %s", newName, newName, newName);
+    system(command);
 }
