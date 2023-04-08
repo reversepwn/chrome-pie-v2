@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void tweakTemplate(const char* name) {
-    printf("Created file %s\n", name);
+void createTweak(const char* name) {
+    printf("Tweak handler is under developement\r\n");
 }
