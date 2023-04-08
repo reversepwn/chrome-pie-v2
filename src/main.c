@@ -37,8 +37,11 @@ int main(int argc, char *argv[])
             run();    
         } else if(strcmp(argv[1], "update") == 0) {
             update();
+            
+        } else if(strcmp(argv[1], "demo") == 0) {
+            loadTweak("demo");
         } else if(strcmp(argv[1], "tweak") == 0) {
-            if(argc == 3) {
+            if(argc == 3) { 
                 if(strcmp(argv[2], "create") == 0) {
                     if (argc == 4) {
                         if(strcmp(argv[3], "-n") == 0) {

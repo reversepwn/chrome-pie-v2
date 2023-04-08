@@ -29,3 +29,8 @@ If everything whent smothly then your target should be restarted!
 
 
 ### After you have installed it go to [here](https://github.com/kevinalavik/chrome-pie/blob/main/USE.md)
+
+## Updating
+
+Updating is simple just run
+`pie update`
