@@ -40,7 +40,23 @@ int main(int argc, char *argv[])
             
         } else if(strcmp(argv[1], "demo") == 0) {
             loadTweak("demo");
-        }  else {
+        }  else if(strcmp(argv[1], "tweak") == 0) {
+            if(argc > 2) {
+                if (strcmp(argv[2], "load") == 0) {
+                    if(argc > 3) {
+                        if(strcmp(argv[3], "") == 0) {
+                            printf(RED "Expected a tweak name, " GRN "Example: " CYN "pie tweak load demo");
+                        } else {
+                            loadTweak(argv[3]);
+                        }
+                    }
+                } else {
+                    error(2);
+                }
+            } else {
+                error(2);
+            }
+        } else {
             error(2);
         }
     }
