@@ -40,27 +40,7 @@ int main(int argc, char *argv[])
             
         } else if(strcmp(argv[1], "demo") == 0) {
             loadTweak("demo");
-        } else if(strcmp(argv[1], "tweak") == 0) {
-            if(argc == 3) { 
-                if(strcmp(argv[2], "create") == 0) {
-                    if (argc == 4) {
-                        if(strcmp(argv[3], "-n") == 0) {
-                            if(argc == 5) {
-                                createTweak(argv[4]);
-                            } else {
-                                printf(RED "Expected a name to be specified, " GRN "see --help or -h for all the commands\r\n");
-                            }
-                        }
-                    } else {
-                        printf(RED "Expected a name parameter (-n), " GRN "see --help or -h for all the commands\r\n");
-                    }
-                } else {
-                    error(2);
-                }
-            } else {
-                error(1);
-            }
-        } else {
+        }  else {
             error(2);
         }
     }
