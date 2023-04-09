@@ -26,37 +26,64 @@ int main(int argc, char *argv[])
     {
         if (strcmp(argv[1], "--help") == 0)
         {
-            for (int i = 0; i < 10; i++)
-                printf("%s", argv[i]);
             help();
-        } else if(strcmp(argv[1], "-h") == 0) {
+        }
+        else if (strcmp(argv[1], "-h") == 0)
+        {
             help();
-        } else if(strcmp(argv[1], "run") == 0) {
+        }
+        else if (strcmp(argv[1], "run") == 0)
+        {
             run();
-        } else if(strcmp(argv[1], "pico") == 0) {
-            run();    
-        } else if(strcmp(argv[1], "update") == 0) {
+        }
+        else if (strcmp(argv[1], "pico") == 0)
+        {
+            run();
+        }
+        else if (strcmp(argv[1], "update") == 0)
+        {
             update();
-            
-        } else if(strcmp(argv[1], "demo") == 0) {
+        }
+        else if (strcmp(argv[1], "demo") == 0)
+        {
             loadTweak("demo");
-        }  else if(strcmp(argv[1], "tweak") == 0) {
-            if(argc > 2) {
-                if (strcmp(argv[2], "load") == 0) {
-                    if(argc > 3) {
-                        if(strcmp(argv[3], "") == 0) {
-                            printf(RED "Expected a tweak name, " GRN "Example: " CYN "pie tweak load demo");
-                        } else {
-                            loadTweak(argv[3]);
-                        }
-                    }
-                } else {
+        }
+        else if (strcmp(argv[1], "tweak") == 0)
+        {
+            if (argc == 3)
+            {
+                if (strcmp(argv[3], "load") == 0)
+                {
+                    printf(RED "Expected a tweak name, " GRN "Example: " CYN "pie tweak load demo\n");
+                }
+                else if (strcmp(argv[3], "create") == 0)
+                {
+                    //createTweakFile(argv[3]);
+                    printf("Work in progress\n");
+                }
+                else
+                {
                     error(2);
                 }
-            } else {
+            }
+            else if (argc == 4)
+            {
+                if (strcmp(argv[3], "load") == 0)
+                {
+                    loadTweak(argv[4]);
+                }
+                else
+                {
+                    error(2);
+                }
+            }
+            else
+            {
                 error(2);
             }
-        } else {
+        }
+        else
+        {
             error(2);
         }
     }
