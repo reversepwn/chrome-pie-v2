@@ -1,3 +1,5 @@
+#include <getopt.h>
+#include <sysexits.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -11,82 +13,162 @@
 #include "lib/chromeos.h"
 #include "lib/update-handler.h"
 
+/* TEMP */
+int unimplemented(int argc, char **argv)
+{
+	fprintf(stderr, "work in progress; unimplemented\n");
+	exit(1);
+}
+
 void error(int type);
 void help();
 void run();
+int cmd_run(int argc, char **argv);
+int cmd_update(int argc, char **argv);
+int cmd_tweak(int argc, char **argv);
+
+typedef int (*pie_command_main)(int,char**);
+
+static const struct option pie_longopts[] =
+{
+	{"help",	no_argument,       0,  'h' },
+	{0,         0,                 0,   0  }
+};
+
+static const char *pie_shortopts =
+	"h" /* help */
+	;
+
+struct pie_subcommand
+{
+	const char *name;
+	pie_command_main routine;
+};
+
+struct pie_subcommand pie_commands[] =
+{
+	{"run",     cmd_run},
+	{"pico",    cmd_run},
+	{"update",  cmd_update},
+	{"tweak",   cmd_tweak},
+	{0,0}
+};
+
+/**
+ * @brief parse and take required action for global options. stops on first non-option
+ *
+ * @param argc number of elements before the NULL-terminator in `argv`
+ * @param argv NULL-terminated array of program arguments
+ *
+ * @returns positive offset to add to `argc` and `argv` for further parsing
+ */
+int do_global_opts(int argc, char **argv)
+{
+	while(1)
+	{
+		int longopt_index;
+		int c = getopt_long(argc, argv, pie_shortopts, pie_longopts, &longopt_index);
+
+		/* done parsing */
+		if(c == -1)
+			return optind;
+
+		switch(c)
+		{
+			case 0:
+				printf("longopt %s", pie_longopts[longopt_index].name);
+				if(optarg)
+					printf("with option %s", optarg);
+				printf("\n");
+				break;
+
+			case 'h':
+				printf("option help\n");
+				break;
+
+			/* unrecognised option */
+			case '?':
+				break;
+
+			default:
+				printf("?? getopt returned character code 0%o ??\n", c);
+				break;
+		}
+	}
+
+	return optind;
+}
+
+int cmd_run(int argc, char **argv)
+{
+	run();
+	return 0;
+}
+
+int cmd_update(int argc, char **argv)
+{
+	update();
+	return 0;
+}
+
+int tweak_load(int argc, char **argv)
+{
+	if(argv[1])
+		loadTweak(argv[1]);
+	else
+		printf(RED "Expected a tweak name, " GRN "Example: " CYN "pie tweak load demo\n");
+
+	return 0;
+}
+
+int cmd_tweak(int argc, char **argv)
+{
+	struct pie_subcommand verbs[] =
+	{
+		{"load", tweak_load},
+		{"create", unimplemented},
+		{0, 0},
+	};
+
+	printf("here %s\n", argv[1]);
+
+	/* iterate valid commands and look for a match */
+	for(struct pie_subcommand *cmd = verbs; cmd->name != NULL; cmd++)
+	{
+		/* if there is a match, call the command's main routine */
+		if(strcmp(argv[1], cmd->name) == 0)
+			return cmd->routine(argc - 1, argv + 1);
+	}
+	
+	/* if no command is found, error out */
+	error(1);
+
+	return 0;
+}
 
 int main(int argc, char *argv[])
 {
-    if (argc == 1)
-    {
-        error(1);
-    }
+	int r = do_global_opts(argc, argv);
+	printf("offset %d\n", r);
 
-    if (argc == 2)
-    {
-        if (strcmp(argv[1], "--help") == 0)
-        {
-            help();
-        }
-        else if (strcmp(argv[1], "-h") == 0)
-        {
-            help();
-        }
-        else if (strcmp(argv[1], "run") == 0)
-        {
-            run();
-        }
-        else if (strcmp(argv[1], "pico") == 0)
-        {
-            run();
-        }
-        else if (strcmp(argv[1], "update") == 0)
-        {
-            update();
-        }
-        else if (strcmp(argv[1], "demo") == 0)
-        {
-            loadTweak("demo");
-        }
-        else if (strcmp(argv[1], "tweak") == 0)
-        {
-            if (argc == 3)
-            {
-                if (strcmp(argv[3], "load") == 0)
-                {
-                    printf(RED "Expected a tweak name, " GRN "Example: " CYN "pie tweak load demo\n");
-                }
-                else if (strcmp(argv[3], "create") == 0)
-                {
-                    //createTweakFile(argv[3]);
-                    printf("Work in progress\n");
-                }
-                else
-                {
-                    error(2);
-                }
-            }
-            else if (argc == 4)
-            {
-                if (strcmp(argv[3], "load") == 0)
-                {
-                    loadTweak(argv[4]);
-                }
-                else
-                {
-                    error(2);
-                }
-            }
-            else
-            {
-                error(2);
-            }
-        }
-        else
-        {
-            error(2);
-        }
-    }
+	argc -= r;
+	argv += r;
+
+	if(argc < 2)
+	{
+		error(1);
+		exit(EX_USAGE);
+	}
+
+	/* iterate valid commands and look for a match */
+	for(struct pie_subcommand *cmd = pie_commands; cmd->name != NULL; cmd++)
+	{
+		/* if there is a match, call the command's main routine */
+		if(strcmp(*argv, cmd->name) == 0)
+			return cmd->routine(argc, argv);
+	}
+	/* if no command is found, error out */
+	error(2);
 }
 
 void error(int type)
@@ -106,7 +188,7 @@ void help()
     printf(UYEL "Chrome Pie" reset "\n -help, -h - Displays this message\n run - runs pie\n tweak - create tweak command(s)\n  tweak create -n 'tweak name' - creates a template file with the name of your tweak\n update - updates pie\r\n");
 }
 
-void run()
+void run(int argc, char **argv)
 {
     system("sudo chmod +xrw ./ascii.sh && sudo ./ascii.sh\n\n");
     printf(BRED "Currently a work in progress, there is no functionallity as of right now. All of the features that work are private!\n\n");
