@@ -1,6 +1,13 @@
 # chrome-pie
 ## (work in progress)
 You deserve access to your device
+
+## Where it is right now
+> Right now chrome-pie is not functional, all the functional parts are still being tested on testing devices and the code is private.
+
+## Can i test?
+> For now **no** in the future **maybe**
+
 ## What it is / Info
 > A jailbreak for chromeos to bypass admin privileges. This works on your school managed chromebook too!
 > The wrapper is made in C
