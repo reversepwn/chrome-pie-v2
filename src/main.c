@@ -128,8 +128,6 @@ int cmd_tweak(int argc, char **argv)
 		{0, 0},
 	};
 
-	printf("here %s\n", argv[1]);
-
 	/* iterate valid commands and look for a match */
 	for(struct pie_subcommand *cmd = verbs; cmd->name != NULL; cmd++)
 	{
@@ -147,7 +145,6 @@ int cmd_tweak(int argc, char **argv)
 int main(int argc, char *argv[])
 {
 	int r = do_global_opts(argc, argv);
-	printf("offset %d\n", r);
 
 	argc -= r;
 	argv += r;
