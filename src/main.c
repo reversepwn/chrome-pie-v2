@@ -76,22 +76,20 @@ int do_global_opts(int argc, char **argv)
 		switch(c)
 		{
 			case 0:
-				printf("longopt %s", pie_longopts[longopt_index].name);
-				if(optarg)
-					printf("with option %s", optarg);
-				printf("\n");
+				/* no longopts yet */
 				break;
 
 			case 'h':
-				printf("option help\n");
+				/* TODO: help should be printed to stderr */
+				help();
 				break;
 
 			/* unrecognised option */
 			case '?':
 				break;
 
+			/* shouldn't be reached */
 			default:
-				printf("?? getopt returned character code 0%o ??\n", c);
 				break;
 		}
 	}
@@ -156,6 +154,7 @@ int main(int argc, char *argv[])
 
 	if(argc < 2)
 	{
+		/* TODO: error code enum? */
 		error(1);
 		exit(EX_USAGE);
 	}
