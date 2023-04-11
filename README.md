@@ -31,5 +31,9 @@ You deserve access to your device
 
 > Then you dont need to buy an raspberry you can just run `odi.sh` and your device should be restarted when its done! 
 
+## Contributors
+
+- [crumb](https://github.com/crumbtoo) - [rewrite arg parsing to use getopt() #4](https://github.com/KevinAlavik/chrome-pie/pull/4)
+
 ### made with love by puffer
 
