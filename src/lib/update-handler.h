@@ -11,7 +11,7 @@ bool updateAvailable = false;
 
 void update()
 {
-    char command[] = "sudo chmod +xrw ./update.sh && sudo ./update.sh %f", version;
+    char command[] = "chmod +xrw ./update.sh && ./update.sh";
     system(command);
 }
 

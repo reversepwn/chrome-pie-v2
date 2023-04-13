@@ -20,11 +20,19 @@ install:
 	install $(PIE_OUT) /usr/local/bin/
 	echo "0.1" > /usr/local/bin/.piever
 
+.PHONY:
+update:
+	make uninstall
+	make install
+	make clean
+
 # ^ i really don't think version tracking should be done this way, but i'm
 # just translating install.sh verbatim.
 
 .PHONY:
 uninstall:
+	rm -f build/*
+	rmdir build
 	rm -f /usr/local/bin/pie
 	rm -f /usr/local/bin/.piever
 

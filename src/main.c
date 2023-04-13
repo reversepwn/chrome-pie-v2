@@ -112,9 +112,12 @@ int cmd_update(int argc, char **argv)
 int tweak_load(int argc, char **argv)
 {
 	if(argv[1])
-		loadTweak(argv[1]);
+		if(argv[2])
+      loadTweak(argv[1], argv[2]);
+    else
+      printf(RED "Expected a tweak name, " GRN "Example: " CYN "pie tweak load ~/Desktop/chrome-pie/src/tweaks/demo.c demo");
 	else
-		printf(RED "Expected a tweak name, " GRN "Example: " CYN "pie tweak load demo\n");
+		printf(RED "Expected a tweak file, " GRN "Example: " CYN "pie tweak load ~/Desktop/chrome-pie/src/tweaks/demo.c\n");
 
 	return 0;
 }
@@ -184,9 +187,9 @@ void help()
     printf(UYEL "Chrome Pie" reset "\n -help, -h - Displays this message\n run - runs pie\n tweak - create tweak command(s)\n  tweak create -n 'tweak name' - creates a template file with the name of your tweak\n update - updates pie\r\n");
 }
 
-void run(int argc, char **argv)
+/*void run(int argc, char **argv)
 {
     system("sudo chmod +xrw ./ascii.sh && sudo ./ascii.sh\n\n");
     printf(BRED "Currently a work in progress, there is no functionallity as of right now. All of the features that work are private!\n\n");
     printf(UMAG "Developed with love from puffer <3\r\n\n");
-}
+}*/

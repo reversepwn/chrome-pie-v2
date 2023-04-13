@@ -1,1 +1,0 @@
-echo "Canary branch is not public anymore"
