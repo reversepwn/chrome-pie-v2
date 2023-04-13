@@ -17,6 +17,7 @@ Installing:
 **Uninstalling**
 
 `make uninstall` or `Make uninstall`
+
 **Then just run (needs to be connected to the target via usb)**
 
 `pie run`
@@ -31,7 +32,7 @@ If everything whent smothly then your target should be restarted!
 
 ## Windows
 
-***Working on it**
+You should be able to follow the [Linux and Mac](https://github.com/kevinalavik/chrome-pie/blob/main/INSTALLL.md#linux-and-mac)
 
 
 ### After you have installed it go to [here](https://github.com/kevinalavik/chrome-pie/blob/main/USE.md)
