@@ -6,8 +6,7 @@ SRC_DIR := src
 PIE_OUT := $(BUILD_DIR)/pie
 
 all: $(BUILD_DIR) $(PIE_OUT)
-	@echo "Succesfully compiled pie"
-	@echo "Now check the install guide (https://github.com/KevinAlavik/chrome-pie/blob/main/INSTALL.md) just skip the Build and Install part. And you should be good to go"
+	@echo "Succesfully compiled and build pie, now install it (make install)"
 
 $(BUILD_DIR):
 	mkdir $(BUILD_DIR) || true
@@ -26,7 +25,7 @@ install:
 
 .PHONY:
 uninstall:
-	rm -f /usr/local/bin/$(PIE_OUT)
+	rm -f /usr/local/bin/pie
 	rm -f /usr/local/bin/.piever
 
 .PHONY:

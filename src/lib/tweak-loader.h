@@ -10,7 +10,7 @@ void loadTweak(char name[])
     char startTweakCommand[100];
     char command[100]; // declare the command variable here
 
-    sprintf(findFileCommand, "find . | grep -i '%s.c'", name);
+    sprintf(findFileCommand, "sudo find ~/ | grep -i '%s.c'", name);
     char file[1000];
     FILE *fp = popen(findFileCommand, "r");
     if (fp == NULL)
@@ -25,7 +25,7 @@ void loadTweak(char name[])
     printf("Running: %s", startTweakCommand);
     system(startTweakCommand);
     char newName[100];
-    sprintf(newName, "./src/tweaks/out/%s", name);
-    sprintf(command, "mv ./a.out %s && sudo chmod +x %s && %s", newName, newName, newName);
+    sprintf(newName, "/usr/local/bin/pie-tweaks/out/%s", name);
+    sprintf(command, "mv a.out %s && sudo chmod +x %s && %s", newName, newName, newName);
     system(command);
 }

@@ -5,12 +5,18 @@ To build and install **pie** on Mac and Linux follow the steps down below
 
 **Build and install using script:**
 
-`chmod +x ./install.sh && ./install.sh`
+Building:
 
-**Build and install manually:**
+`make` or `Make`
 
-`working on it`
+Installing:
 
+`make install` or `Make install`
+
+
+**Uninstalling**
+
+`make uninstall` or `Make uninstall`
 **Then just run (needs to be connected to the target via usb)**
 
 `pie run`

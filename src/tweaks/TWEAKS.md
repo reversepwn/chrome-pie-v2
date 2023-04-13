@@ -21,7 +21,7 @@ To create a tweak for chrome pie start by coming up with a name, we will use `he
 #include "chromeos.h" 
 
 int main() {
-  load()
+  load();
 }
 
 int load() {
