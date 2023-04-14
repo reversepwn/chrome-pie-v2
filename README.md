@@ -1,5 +1,5 @@
 # chrome-pie
-## (work in progress)
+##### (work in progress)
 You deserve access to your device
 
 ## Where it is right now
