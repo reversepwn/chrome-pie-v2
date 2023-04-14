@@ -22,6 +22,7 @@ install:
 
 .PHONY:
 update:
+	git pull
 	make uninstall
 	make install
 	make clean
