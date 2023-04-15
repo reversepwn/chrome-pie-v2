@@ -7,5 +7,9 @@ void check() {
 }
 
 void alert(char message[]) {
-    printf("Triggered an alert, message content: %s\r\n", message);
+    printf("%s\r\n", message);
+}
+
+void input(char message[]) {
+    printf("%s\r\n", message);
 }

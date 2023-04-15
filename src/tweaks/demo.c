@@ -33,6 +33,6 @@ int load()
 int tweak()
 {
     // This is the main tweak function, will only load if the load() function was ran successfully
-    printf(GRN "Hello, World!");
+    alert(GRN "Hello, World!");
     return 0;
 }
