@@ -122,11 +122,17 @@ int tweak_load(int argc, char **argv)
 	return 0;
 }
 
+int tweak_run(int argc, char**argv) {
+  if(argv[1])
+    runTweak(argv[2])
+}
+
 int cmd_tweak(int argc, char **argv)
 {
 	struct pie_subcommand verbs[] =
 	{
 		{"load", tweak_load},
+    {"run", tweak_run},
 		{"create", unimplemented},
 		{0, 0},
 	};

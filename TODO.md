@@ -1,5 +1,7 @@
 # (public) Todo list
 
+- [ ] Add a `pie tweak run <    >` command 
+
 - [ ] Fix issues regarding issue #6, security issues
 
 - [ ] Add support for loading tweaks using url (`pie tweak load web https://example.com`) (work in progress by [beef](https://github.com/mrbeef777))

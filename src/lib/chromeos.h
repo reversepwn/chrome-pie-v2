@@ -7,9 +7,9 @@ void check() {
 }
 
 void alert(char message[]) {
-    printf("%s\r\n", message);
+    printf("ALERT: %s\r\n", message);
 }
 
 void input(char message[]) {
-    printf("%s\r\n", message);
+    printf("INPUT: %s\r\n", message);
 }
