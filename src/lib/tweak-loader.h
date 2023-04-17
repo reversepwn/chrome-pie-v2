@@ -37,3 +37,11 @@ void loadTweak(char path[], char name[]) {
   system(mvCommand);
   system(runCommand);
 }
+
+void runTweak(char name[]) {
+  char runCommand[100];
+
+  sprintf(runCommand, "/usr/local/bin/pie-tweaks/%s", name);
+
+  system(runCommand);
+}

@@ -124,7 +124,10 @@ int tweak_load(int argc, char **argv)
 
 int tweak_run(int argc, char**argv) {
   if(argv[1])
-    runTweak(argv[2])
+    runTweak(argv[2]);
+  else
+	printf(RED "Expected a tweak name, " GRN "Example: " CYN "pie tweak run demo");
+  return 0;
 }
 
 int cmd_tweak(int argc, char **argv)
