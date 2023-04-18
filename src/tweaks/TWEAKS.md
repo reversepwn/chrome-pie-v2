@@ -48,4 +48,14 @@ Demo:
 
 **To install a tweak (using url) run the folowing command:**
 
+`pie tweak loadUrl url`
+
+## Running the tweaks 
+
+`pie tweak run tweakName`
+
+**Example:**
+
+`pie tweak run demo`
+
 Work in progress
