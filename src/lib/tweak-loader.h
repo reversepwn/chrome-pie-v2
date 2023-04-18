@@ -4,6 +4,8 @@
 #include <unistd.h>
 #include <limits.h>
 
+#include "colors.h"
+
 /*void loadTweak(char path[])
 {
     char startTweakCommand[100];
@@ -32,10 +34,9 @@ void loadTweak(char path[], char name[]) {
   sprintf(runCommand, "/usr/local/bin/pie-tweaks/%s", name);
 
   system(mkDirCommand);
-  system("clear");
   system(compileCommand);
   system(mvCommand);
-  system(runCommand);
+  printf("[" GRN "Success" reset "] " YEL "Successfully installed the tweak, run: pie tweak run name. (replace name with the name of the tweak)\n");
 }
 
 void runTweak(char name[]) {

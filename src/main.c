@@ -109,15 +109,15 @@ int cmd_update(int argc, char **argv)
 	return 0;
 }
 
-int tweak_load(int argc, char **argv)
+int tweak_install(int argc, char **argv)
 {
 	if(argv[1])
 		if(argv[2])
       loadTweak(argv[1], argv[2]);
     else
-      printf(RED "Expected a tweak name, " GRN "Example: " CYN "pie tweak load ~/Desktop/chrome-pie/src/tweaks/demo.c demo");
+      printf(RED "Expected a tweak name, " GRN "Example: " CYN "pie tweak install ~/Desktop/chrome-pie/src/tweaks/demo.c demo");
 	else
-		printf(RED "Expected a tweak file, " GRN "Example: " CYN "pie tweak load ~/Desktop/chrome-pie/src/tweaks/demo.c\n");
+		printf(RED "Expected a tweak file, " GRN "Example: " CYN "pie tweak install ~/Desktop/chrome-pie/src/tweaks/demo.c\n");
 
 	return 0;
 }
@@ -135,8 +135,8 @@ int cmd_tweak(int argc, char **argv)
 {
 	struct pie_subcommand verbs[] =
 	{
-		{"load", tweak_load},
-    {"run", tweak_run},
+		{"install", tweak_install},
+    	{"run", tweak_run},
 		{"create", unimplemented},
 		{0, 0},
 	};

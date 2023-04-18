@@ -36,11 +36,11 @@ int tweak() {
 
 ```
 
-## Loading tweaks
+## Installing tweaks
 
 **To install a tweak (as a file) run the following command:**
 
-`pie tweak load filePath tweakName`
+`pie tweak install filePath tweakName`
 
 Demo:
 
@@ -48,7 +48,7 @@ Demo:
 
 **To install a tweak (using url) run the folowing command:**
 
-`pie tweak loadUrl url`
+`pie tweak install url tweakUrl`
 
 ## Running the tweaks 
 
