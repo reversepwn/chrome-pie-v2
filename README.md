@@ -32,6 +32,11 @@ If something like your school is managing your chromebook then you probably dont
 
 Then you dont need to buy an raspberry you can just run `odi.sh` and your device should be restarted when its done! 
 
+## Support
+Chrome Pie is an opensource tool but if you would like to support you could always sponsor me to help with other projects!
+
+[![](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/KevinAlavik)
+
 ## Contributors
 
 - [crumb](https://github.com/crumbtoo) - [rewrite arg parsing to use getopt() #4](https://github.com/KevinAlavik/chrome-pie/pull/4)
