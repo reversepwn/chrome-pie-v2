@@ -32,5 +32,7 @@ int tweak()
 }
 
 int hideDock() {
-    printf("[" GRN "======>" reset "] Hiding dock\n[" RED "ERROR" reset "] " YEL "  Could not change file " CYN "unknown\n");
+    printf("[" GRN "======>" reset "] Hiding dock\n");
+    sleep(2);
+    printf("[" RED "ERROR" reset "] " YEL "  Could not change file " CYN "unknown\n");
 }
