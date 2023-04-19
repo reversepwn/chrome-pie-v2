@@ -5,8 +5,10 @@
 #include <limits.h>
 
 #include "../lib/chromeos.h"
-#include "../lib/tweak-loader.h"
+#include "../lib/tweak-handler.h"
 #include "../lib/colors.h"
+
+
 
 int load();
 int tweak();
@@ -35,4 +37,5 @@ int hideDock() {
     printf("[" GRN "======>" reset "] Hiding dock\n");
     sleep(2);
     printf("[" RED "ERROR" reset "] " YEL "  Could not change file " CYN "unknown\n");
+    changeFile();
 }

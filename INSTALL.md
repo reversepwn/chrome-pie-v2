@@ -30,6 +30,8 @@ Installing:
 
 If everything whent smothly then your target should be restarted!
 
+
+
 ## Windows
 
 You should be able to follow the [Linux and Mac](https://github.com/kevinalavik/chrome-pie/blob/main/INSTALLL.md#linux-and-mac)
@@ -41,3 +43,9 @@ You should be able to follow the [Linux and Mac](https://github.com/kevinalavik/
 
 Updating is simple just run
 `pie update`
+or
+`./lazzy.sh`
+
+
+## If you are lazzy
+If you are lazzy just run `./lazzy.sh`

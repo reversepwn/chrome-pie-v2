@@ -18,3 +18,7 @@ void tweakCommandHandler(int argc, char *argv[])
 void createTweakFile(char *argv[]) {
     printf("Work in progress!\n");
 }
+
+void changeFile() {
+    printf("File changer helper is work in progress\n");   
+}

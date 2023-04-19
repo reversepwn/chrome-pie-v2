@@ -29,14 +29,21 @@ void loadTweak(char path[], char name[]) {
   char runCommand[100];
 
   sprintf(mkDirCommand, "mkdir /usr/local/bin/pie-tweaks/");
+  strcat(mkDirCommand, " > /dev/null" );
   sprintf(compileCommand, "cc %s -o %s", path, name);
   sprintf(mvCommand, "mv ./%s /usr/local/bin/pie-tweaks/%s", name, name);
+  strcat(mvCommand, " > /dev/null" );
   sprintf(runCommand, "/usr/local/bin/pie-tweaks/%s", name);
 
   system(mkDirCommand);
   system(compileCommand);
-  system(mvCommand);
+  int status = system(compileCommand);
+  if (status == 0) {
   printf("[" GRN "Success" reset "] " YEL "Successfully installed the tweak, run: pie tweak run name. (replace name with the name of the tweak)\n");
+  } else {
+  printf("[" RED "Error" reset "] " YEL "Failed to install the tweak.\n");
+  }
+  system(mvCommand);
 }
 
 void runTweak(char name[]) {
