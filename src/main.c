@@ -24,7 +24,7 @@ void error(int type);
 void help();
 void run();
 int cmd_run(int argc, char **argv);
-int cmd_update();
+int cmd_update(int argc, char **argv);
 int cmd_tweak(int argc, char **argv);
 
 typedef int (*pie_command_main)(int,char**);
@@ -32,7 +32,7 @@ typedef int (*pie_command_main)(int,char**);
 static const struct option pie_longopts[] =
 {
 	{"help",	no_argument,       0,  'h' },
-  {0,         0,                 0,   0  },
+	{0,         0,                 0,   0  }
 };
 
 static const char *pie_shortopts =
@@ -103,50 +103,31 @@ int cmd_run(int argc, char **argv)
 	return 0;
 }
 
-int cmd_update()
+int cmd_update(int argc, char **argv)
 {
 	update();
 	return 0;
 }
 
-int tweak_install(int argc, char **argv)
+int tweak_load(int argc, char **argv)
 {
 	if(argv[1])
 		if(argv[2])
       loadTweak(argv[1], argv[2]);
     else
-      printf(RED "Expected a tweak name, " GRN "Example: " CYN "pie tweak install ~/Desktop/chrome-pie/src/tweaks/demo.c demo\n");
+      printf(RED "Expected a tweak name, " GRN "Example: " CYN "pie tweak load ~/Desktop/chrome-pie/src/tweaks/demo.c demo");
 	else
-		printf(RED "Expected a tweak file, " GRN "Example: " CYN "pie tweak install ~/Desktop/chrome-pie/src/tweaks/demo.c\n");
+		printf(RED "Expected a tweak file, " GRN "Example: " CYN "pie tweak load ~/Desktop/chrome-pie/src/tweaks/demo.c\n");
 
 	return 0;
 }
 
-int tweak_run(int argc, char**argv) {
-  if(argv[1]) {
-    runTweak(argv[1]);
-  } else {
-	printf(RED "Expected a tweak name, " GRN "Example: " CYN "pie tweak run demo");
-  }
-  return 0;
-}
-
-int tweak_create(int argc, char **argv) {
-  if(argv[1]) {
-    printf(YEL "Tweak Create command is currently under developement, check back later!\n");
-  } else {
-    printf(RED "Expected a project tweak name, " GRN "Example: " CYN "pie tweak create hello-mom\n\r");
-  }
-  return 0;
-}
 int cmd_tweak(int argc, char **argv)
 {
 	struct pie_subcommand verbs[] =
 	{
-		{"install", tweak_install},
-    {"run", tweak_run},
-		{"create", tweak_create},
-    {"url", unimplemented},
+		{"load", tweak_load},
+		{"create", unimplemented},
 		{0, 0},
 	};
 
@@ -169,18 +150,18 @@ int main(int argc, char *argv[])
 	int r = do_global_opts(argc, argv);
 
 	argc -= r;
-  
 	argv += r;
 
-  if(argc < 2)
+	if(argc < 2)
 	{
-    error(1);
+		/* TODO: error code enum? */
+		error(1);
 		exit(EX_USAGE);
-	}else if (argc < 0) 
-  {
-    error(3);
-    exit(EX_USAGE);
-  }
+	} else if(argc <= 0) {
+		error(3);
+		exit(EX_USAGE);
+	}
+
 	/* iterate valid commands and look for a match */
 	for(struct pie_subcommand *cmd = pie_commands; cmd->name != NULL; cmd++)
 	{
@@ -202,14 +183,11 @@ void error(int type)
     {
         printf(RED "Did not find command or parameter, " reset GRN "see --help or -h for all the avalible commands and parameters\r\n");
     }
-	if (type == 3) {
-		printf(RED "you really fucked something up, " YEL "reinstall and you should be good to go\n");
-	}
 }
 
 void help()
 {
-    printf(UYEL "Chrome Pie" reset "\n -help, -h - Displays this message\n run - runs pie\n tweak - create tweak command(s)\n tweak install {path} {name} - installs an tweak from inputed path and name, path is to the tweaks main c file. Name can be anything, the tweak will be defined as that name\n tweak run {name} - runs the inputed tweak (defined by its name) all tweaks are located in: " UYEL"/usr/local/bin/pie-tweaks/" reset "\n tweak create {name} - creates a template file with the name of your tweak\n tweak url {url} {name} - installs a tweak from an url with the defined name. (To load the tweak its the same as regular tweaks)\n update - updates pie\r\n");
+    printf(UYEL "Chrome Pie" reset "\n -help, -h - Displays this message\n run - runs pie\n tweak - create tweak command(s)\n  tweak create -n 'tweak name' - creates a template file with the name of your tweak\n update - updates pie\r\n");
 }
 
 /*void run(int argc, char **argv)
