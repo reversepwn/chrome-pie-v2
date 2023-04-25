@@ -1,45 +1,49 @@
-# chrome-pie
-##### (work in progress)
-You deserve access to your device
+# Chrome Pie V2
+CP2 is a new and improved version of [CP1](https://github.com/kevinalavik/chrome-pie)
 
-## Where it is right now
-Right now chrome-pie is not functional, all the functional parts are still being tested on testing devices and the code is private.
+## Features
+CP2 has the old tweak system so all of your old tweaks should work, but the main code is remade.
 
-## Can i test?
-For now **no** in the future **maybe**
 
-## What it is / Info
-A jailbreak for chromeos to bypass admin privileges. This works on your school managed chromebook too!
+## Installing
+You can now chose between different install methods: fakeos, regular.
+As of now those are the only supported options.
 
-The wrapper is made in C
+----
+### FakeOS (No Developer Mode)
+**Requirements**
+- A normal USB, 8GB or more
+- A computer
+- And ofc a chromebook
 
-## How to use it!
+**What is "fakeos"?**
 
-You will need to buy an raspberry pi pico and you can get one for like 8 USD from microcenter. Check [`INSTALL.md`](https://github.com/KevinAlavik/chrome-pie/blob/main/INSTALL.md) for instructions on how to install it and build it.*
+FakeOS is our "own" operating system, its not really our we just made a wrapper that goes around [chromiumos](https://www.chromium.org/chromium-os/)
 
-***You can use a computer or even your phone (either Android or jailbroken iOS should work, but then you need usb to usb canble and thats not really something you have laying around) but a raspberry pi pico is more sneaky and you can have it in your pocket.**
+**Supported devices and versions**
+- Version 112.0.5615.134 (64 bit) **- currentlly in testing phase**
 
-## Why is it good to have the pico in your pocket?
+**How do i install?**
 
-The target (aka your chromebook) has a chance of deafulting back the privlages on like restart or if the computer dies
+wip
 
-## Why do you need an raspberry pi pico?
+---
+### Regular (No Developer Mode)
+**Requirements**
+- Preferablly a raspberry pi pico or another small computer (any computer should maybe work, we are testing rn)
 
-If something like your school is managing your chromebook then you probably dont have full disk access or linux access. So we need like an "middle man" that sends and edits data on the targets side!
+**What is regular and what does it do?**
 
-**And im like 80% sure you cant do this via bluethooth sadly**
-## If i do have linux access?
+Its basiclly the original jailbreak just that its a bit more "better" now. It bassiclly bypasses school managed computers and gets root access.
 
-Then you dont need to buy an raspberry you can just run `odi.sh` and your device should be restarted when its done! 
+**Supported devices and versions**
+- Version 112.0.5615.134 (64 bit) **- currentlly in testing phase**
 
-## Support
-Chrome Pie is an opensource tool but if you would like to support you could always sponsor me to help with other projects!
+**How do i install?**
 
-[![](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/KevinAlavik)
+wip
 
-## Contributors
+---
 
-- [crumb](https://github.com/crumbtoo) - [rewrite arg parsing to use getopt() #4](https://github.com/KevinAlavik/chrome-pie/pull/4)
-
-### made with love by puffer
-
+## What you get
+When successfully jailbreaking with any of the options above you will get an app (called Pie) and an terminal emulator so you can controll the chromebook via terminal (**no developer mode needed**).

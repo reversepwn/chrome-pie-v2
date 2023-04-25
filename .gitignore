@@ -2,3 +2,4 @@ build/
 pie
 src/tweaks/out/
 .DS_Store
+.vscode/
