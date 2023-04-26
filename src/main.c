@@ -1,6 +1,9 @@
 #include <stdio.h>
+#include "lib/usb.h"
 
-int main(int argc, char **argv) {
-    printf("Working on remaking everything!\n");
+void getAllUsb();
+
+int main(int argc, char *argv[]) {
+    printf(RED "Work in progress, fakeos is work in progress!\n");
     return 0;
 }

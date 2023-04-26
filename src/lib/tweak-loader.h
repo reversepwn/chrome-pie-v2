@@ -6,22 +6,6 @@
 
 #include "colors.h"
 
-/*void loadTweak(char path[])
-{
-    char startTweakCommand[100];
-    char command[100]; // declare the command variable here
-    char outCommand[100];
-    sprintf(startTweakCommand, "gcc %s ", path);
-    printf("Running: %s", startTweakCommand);
-    system(startTweakCommand);
-    char newName[100];
-    sprintf(outCommand, "sudo mkdir ~/usr/local/bin/pie-tweaks/out/");
-    system(outCommand);
-    sprintf(newName, "~/usr/local/bin/pie-tweaks/out/%s", path);
-    sprintf(command, "sudo mv a.out ~%s && sudo chmod +x ~%s && ~%s", newName, newName, newName);
-    system(command);
-}*/
-
 void loadTweak(char path[], char name[]) {
   char compileCommand[100];
   char mkDirCommand[100];
